@@ -2,20 +2,21 @@
   <div class="content-wrap synergeticOffice mt22 clearfix">
     <div class="clearfix">
       <div class="area1">
-        <today-operating></today-operating>
-        <video-show></video-show>
+        <energy-consumption></energy-consumption>
+        <video-show-one></video-show-one>
+        <video-show-two></video-show-two>
         <chart-one></chart-one>
       </div>
       <div class="area2">
         <!-- todo area2和area3用不同的表图填满 -->
-        <flow-change></flow-change>
+        <old-energy-consumption></old-energy-consumption>
         <heat-map></heat-map>
-        <flow-prediction></flow-prediction>
+        <pred-energy-consumption></pred-energy-consumption>
         <chart-two></chart-two>
       </div>
       <div class="area3">
-        <visitor-source></visitor-source>
-        <scenic-income></scenic-income>
+        <abnormal></abnormal>
+        <week-environmental></week-environmental>
         <chart-three></chart-three>
         <chart-four></chart-four>
       </div>
@@ -33,32 +34,31 @@
 </template>
 
 <script>
-import operating from './operating';
-import flowChange from './flowChange';
-import heatMap from './heatMap';
-import flowPrediction from './flowPrediction';
-import visitorSource from './visitorSource';
-import scenicIncome from './scenicIncome';
-import dutyToday from './dutyToday';
-import videoShow from './videoShow';
+import energyConsumption from './energyConsumption';
+import videoShowOne from './videoShowOne';
+import videoShowTwo from './videoShowTwo';
 import chartOne from './chartOne';
+import oldEnergyConsumption from './oldEnergyConsumption';
+import heatMap from './heatMap';
+import predEnergyConsumption from './predEnergyConsumption';
 import chartTwo from './chartTwo';
+import abnormal from './abnormal';
+import weekEnvironmental from './weekEnvironmental';
 import chartThree from './chartThree';
 import chartFour from './chartFour';
-import ChartThree from './chartThree.vue';
 export default {
   name: 'integratedScreen',
   components: {
-    'today-operating': operating,
-    'flow-change': flowChange,
-    'heat-map': heatMap,
-    'flow-prediction': flowPrediction,
-    'visitor-source': visitorSource,
-    'scenic-income': scenicIncome,
-    'duty-today': dutyToday,
-    'video-show': videoShow,
+    'energy-consumption': energyConsumption,
+    'video-show-one': videoShowOne,
+    'video-show-two': videoShowTwo,
     'chart-one': chartOne,
+    'old-energy-consumption': oldEnergyConsumption,
+    'heat-map': heatMap,
+    'pred-energy-consumption': predEnergyConsumption,
     'chart-two': chartTwo,
+    'abnormal': abnormal,
+    'week-environmental': weekEnvironmental,
     'chart-three': chartThree,
     'chart-four': chartFour
   },
