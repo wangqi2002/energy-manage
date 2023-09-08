@@ -4,9 +4,9 @@ import energyCost from '@/components/environmentalProtection/energyCost'
 import userManagement from '@/components/userManagement/main'
 import energyPrediction from '@/components/callCenter/energyPrediction'
 import dataAcquisition from '@/components/dataAcquisition/dataAcquisition'
-import energyWater from '@/components/marketing/energyWater'
+import waterAnalysis from '@/components/waterAnalysis/waterAnalysis'
 import integratedScreen from '@/components/integratedScreen/integratedScreen'
-import energyPower from '@/components/dataV/energyPower'
+import coulometricAnalysis from '@/components/coulometricAnalysis/coulometricAnalysis'
 import energySteam from '@/components/emergencyManage/energySteam'
 import ScenicMap from '@/components/scenic_map/ScenicMap'
 import video from '@/components/video/video'
@@ -35,9 +35,9 @@ export default {
     },
     //水量分析
     {
-      path: '/energyWater',
-      name: 'energyWater',
-      component: energyWater
+      path: '/waterAnalysis',
+      name: 'waterAnalysis',
+      component: waterAnalysis
     },
     //报表系统
     {
@@ -82,9 +82,9 @@ export default {
     },
     //电量分析
     {
-      name: 'energyPower',
-      path: '/energyPower',
-      component: energyPower
+      name: 'coulometricAnalysis',
+      path: '/coulometricAnalysis',
+      component: coulometricAnalysis
     },
     //汽量分析
     {

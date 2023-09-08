@@ -52,12 +52,12 @@ export default {
         {
           title: '电量分析',
           class: 'icon-a3',
-          route: '/energyPower'
+          route: '/coulometricAnalysis'
         },
         {
           title: '水量分析',
           class: 'icon-a4',
-          route: '/energyWater'
+          route: '/waterAnalysis'
         },
         {
           title: '汽量分析',
