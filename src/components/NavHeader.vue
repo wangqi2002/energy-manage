@@ -42,7 +42,7 @@ export default {
         {
           title: '综合大屏',
           class: 'icon-a1',
-          route: '/screen'
+          route: '/integratedScreen'
         },
         {
           title: '数据采集',

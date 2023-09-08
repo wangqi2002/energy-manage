@@ -55,7 +55,7 @@ export default {
           this.loading = true;
           setTimeout(() => {
             this.$store.commit('UPDATEISLOGIN', true);
-            this.$router.push({ name: 'screen' })
+            this.$router.push({ name: 'integratedScreen' })
             this.loading = false;
           }, 1000)
 

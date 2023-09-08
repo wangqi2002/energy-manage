@@ -5,13 +5,13 @@ import userManagement from '@/components/userManagement/main'
 import energyPrediction from '@/components/callCenter/energyPrediction'
 import dataPoint from '@/components/infoRelease/dataPoint'
 import energyWater from '@/components/marketing/energyWater'
-import screen from '@/components/screen/screen'
+import integratedScreen from '@/components/screen/integratedScreen'
 import energyPower from '@/components/dataV/energyPower'
 import energySteam from '@/components/emergencyManage/energySteam'
 import ScenicMap from '@/components/scenic_map/ScenicMap'
 import video from '@/components/video/video'
 
-//登录
+//登录 
 import Login from '@/views/Login/index'
 
 export default {
@@ -28,9 +28,10 @@ export default {
     },
     //综合大屏
     {
-      path: '/screen',
-      name: 'screen',
-      component: screen
+      path: '/integratedScreen',
+      name: 'integratedScreen',
+      component: integratedScreen
+      // integratedScreen
     },
     //水量分析
     {
