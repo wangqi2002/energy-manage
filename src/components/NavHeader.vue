@@ -47,7 +47,7 @@ export default {
         {
           title: '数据采集',
           class: 'icon-a11',
-          route: '/dataPoint'
+          route: '/dataAcquisition'
         },
         {
           title: '电量分析',

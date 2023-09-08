@@ -28,7 +28,6 @@
   </div>
 </template>
 <script>
-import infoRelease from '../infoRelease/infoRelease';
 export default {
   name: 'pin',
   data() {
@@ -147,7 +146,6 @@ export default {
   },
   components: {
     // 'title-h3':title
-    infoRelease
   }
 }
 </script>

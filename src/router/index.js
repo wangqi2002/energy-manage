@@ -3,7 +3,7 @@ import energyDiagram from '@/components/touristComplaint/energyDiagram'
 import energyCost from '@/components/environmentalProtection/energyCost'
 import userManagement from '@/components/userManagement/main'
 import energyPrediction from '@/components/callCenter/energyPrediction'
-import dataPoint from '@/components/infoRelease/dataPoint'
+import dataAcquisition from '@/components/dataAcquisition/dataAcquisition'
 import energyWater from '@/components/marketing/energyWater'
 import integratedScreen from '@/components/integratedScreen/integratedScreen'
 import energyPower from '@/components/dataV/energyPower'
@@ -65,9 +65,9 @@ export default {
     },
     //数据采集
     {
-      path: '/dataPoint',
-      name: 'dataPoint',
-      component: dataPoint
+      path: '/dataAcquisition',
+      name: 'dataAcquisition',
+      component: dataAcquisition
     },
     {
       path: '/userManagement',

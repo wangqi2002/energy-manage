@@ -22,7 +22,6 @@
 
 <script>
   import title from '../title';
-  import infoRelease from '../infoRelease/infoRelease';
   export default{
     name:'pin',
     data(){
@@ -141,7 +140,6 @@
     },
     components:{
       // 'title-h3':title
-      infoRelease
     }
   }
 
