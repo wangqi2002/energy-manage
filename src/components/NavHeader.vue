@@ -62,7 +62,7 @@ export default {
         {
           title: '汽量分析',
           class: 'icon-a5',
-          route: '/energySteam'
+          route: '/steamAnalysis'
         },
         {
           title: '地理信息',

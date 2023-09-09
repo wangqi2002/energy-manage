@@ -1,4 +1,4 @@
-import report from '@/components/synergeticOffice/report'
+import report from '@/components/report/report'
 import energyDiagram from '@/components/touristComplaint/energyDiagram'
 import energyCost from '@/components/environmentalProtection/energyCost'
 import userManagement from '@/components/userManagement/main'
@@ -7,7 +7,7 @@ import dataAcquisition from '@/components/dataAcquisition/dataAcquisition'
 import waterAnalysis from '@/components/waterAnalysis/waterAnalysis'
 import integratedScreen from '@/components/integratedScreen/integratedScreen'
 import coulometricAnalysis from '@/components/coulometricAnalysis/coulometricAnalysis'
-import energySteam from '@/components/emergencyManage/energySteam'
+import steamAnalysis from '@/components/steamAnalysis/steamAnalysis'
 import ScenicMap from '@/components/scenic_map/ScenicMap'
 import video from '@/components/video/video'
 
@@ -88,9 +88,9 @@ export default {
     },
     //汽量分析
     {
-      name: 'energySteam',
-      path: '/energySteam',
-      component: energySteam
+      name: 'steamAnalysis',
+      path: '/steamAnalysis',
+      component: steamAnalysis
     },
     //视频系统
     {
