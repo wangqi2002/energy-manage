@@ -77,7 +77,7 @@ export default {
         {
           title: '能源桑基图',
           class: 'icon-a8',
-          route: '/energyDiagram'
+          route: '/energySankeyChart'
         },
         {
           title: '能源费用',

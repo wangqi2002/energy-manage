@@ -1,8 +1,8 @@
 import report from '@/components/report/report'
-import energyDiagram from '@/components/touristComplaint/energyDiagram'
-import energyCost from '@/components/environmentalProtection/energyCost'
+import energySankeyChart from '@/components/energyDiagram/energySankeyChart'
+import energyCost from '@/components/energyCost/energyCost'
 import userManagement from '@/components/userManagement/main'
-import energyPrediction from '@/components/callCenter/energyPrediction'
+import energyPrediction from '@/components/energyPrediction/energyPrediction'
 import dataAcquisition from '@/components/dataAcquisition/dataAcquisition'
 import waterAnalysis from '@/components/waterAnalysis/waterAnalysis'
 import integratedScreen from '@/components/integratedScreen/integratedScreen'
@@ -47,9 +47,9 @@ export default {
     },
     //能源桑基图
     {
-      path: '/energyDiagram',
-      name: 'energyDiagram',
-      component: energyDiagram
+      path: '/energySankeyChart',
+      name: 'energySankeyChart',
+      component: energySankeyChart
     },
     //能源预测
     {
