@@ -59,22 +59,12 @@ table {
   border-spacing: 0;
 }
 table td {
-  border-left: solid 1px #1b49a2;
-  border-top: solid 1px #1b49a2;
   color: #fff;
   float: left;
   text-align: center;
 }
 table tr td {
-  height: 0.3rem;
-  line-height: 0.3rem;
   color: #81b2ff;
-}
-table tr:hover {
-  background: #6004ba;
-}
-table tr:hover td {
-  color: #fff;
 }
 table td:nth-child(1) {
   border-left: none;
@@ -92,7 +82,6 @@ table th {
   line-height: 0.3rem;
   font-size: 0.12rem;
   text-align: center;
-  box-shadow: 0 1px 2px #012352;
 }
 input[type="submit"],
 input[type="reset"],

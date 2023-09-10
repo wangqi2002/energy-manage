@@ -1,7 +1,7 @@
 <template>
   <div class="login" v-loading="loading">
     <el-form class="login-content" :model="loginForm" ref="loginForm" :rules="rules">
-      <img class="logo1" src="../../../static/images/logo.jpg" alt />
+      <img class="logo1" src="../../../static/images/logo2.png" alt />
       <div class="title">企业综合信息管理平台</div>
       <el-form-item class="login-content-item" label="账号" prop="account">
         <el-input v-model="loginForm.account" style="width:240px;" placeholder="请输入账号" />

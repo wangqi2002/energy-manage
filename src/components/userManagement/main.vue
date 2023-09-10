@@ -171,20 +171,33 @@
                 </div>
             </div>
         </div>
+        <el-dialog class="usermanager_dialog" :visible.sync="dialogVisible" title="用户管理" draggable>
+            <span>
+                <user-manager></user-manager>
+            </span>
+        </el-dialog>
     </div>
 </template>
 
 <script>
+import usermanager from './userManagement.vue'
 export default {
     name: 'userManagement',
+    data() {
+        return {
+            dialogVisible: false
+        }
+    },
     components: {
+        'user-manager': usermanager
     },
     mounted() {
         this.$store.commit('UPDATEISLOGIN', true);
     },
     methods: {
         usermanagerHandle() {
-            console.log('usermanagerHandle')
+            this.dialogVisible = true
+            console.log('usermanagerHandle', this.dialogVisible)
         }
     },
 }
@@ -480,5 +493,41 @@ export default {
 
 .icon-ht29:before {
     left: .37rem
+}
+
+.usermanager_dialog {
+    width: 84vw;
+    height: 80vh;
+    margin: auto;
+    margin-top: 100px;
+    text-align: left;
+}
+</style>
+<style>
+.usermanager_dialog>.el-dialog {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    margin-top: 0 !important;
+    border-radius: 5px;
+}
+
+.usermanager_dialog>.el-dialog>.el-dialog__header {
+    background: linear-gradient(180deg, #5292f4, #0cc3fd);
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+}
+
+.usermanager_dialog>.el-dialog>.el-dialog__body {
+    height: calc(80vh - 100px);
+    padding: 15px 10px;
+}
+
+.usermanager_dialog>.el-dialog .el-dialog__headerbtn {
+    top: 13px;
+}
+
+.usermanager_dialog>.el-dialog .el-dialog__headerbtn .el-dialog__close {
+    color: #fff;
 }
 </style>
