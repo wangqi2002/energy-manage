@@ -6,11 +6,11 @@
           <div class="clearfix mlnumber">
             <span class="lf p">From：</span>
             <div class="pr lf">
-              <input class="input-txt" type="date" v-model="bgntime" />
+              <el-input class="time" type="date" v-model="bgntime"></el-input>
             </div>
             <span class="lf mlnewnum p">To：</span>
             <div class="pr lf">
-              <input class="input-txt" type="date" v-model="endtime" />
+              <el-input class="time" type="date" v-model="endtime"></el-input>
             </div>
             <el-button class="searchs" type="primary" @click="search_handler()">搜索</el-button>
           </div>
@@ -308,8 +308,14 @@ export default {
 .screen-wrap .mlnumber {
   margin-left: 15px;
 }
+
 .screen-wrap .mlnumber .p {
   font-size: 14px;
+  margin-right: 8px;
+}
+
+.screen-wrap .mlnumber .time {
+  width: 150px;
 }
 
 .screen-wrap .input-txt {
@@ -324,7 +330,7 @@ export default {
 }
 
 .screen-wrap .mlnewnum {
-  margin-left: .4rem
+  margin-left: 18px;
 }
 
 .newnotice-wraps {

@@ -8,7 +8,6 @@
             <div class="pr lf">
               <el-input class="time" type="date" v-model="bgntime"></el-input>
             </div>
-
             <span class="lf mlnewnum p">To：</span>
             <div class="pr lf">
               <el-input class="time" type="date" v-model="endtime"></el-input>
@@ -574,6 +573,11 @@ export default {
 }
 .screen-wrap .mlnumber .p {
   font-size: 14px;
+  margin-right: 8px;
+}
+
+.screen-wrap .mlnumber .time {
+  width: 150px;
 }
 
 .screen-wrap .input-txt {
@@ -588,7 +592,7 @@ export default {
 }
 
 .screen-wrap .mlnewnum {
-  margin-left: .4rem
+  margin-left: 18px;
 }
 
 .newnotice-wraps {

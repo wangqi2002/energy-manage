@@ -6,12 +6,11 @@
           <div class="clearfix mlnumber">
             <span class="lf p">From：</span>
             <div class="pr lf">
-              <input class="input-txt" type="date" v-model="bgntime" />
+              <el-input class="time" type="date" v-model="bgntime"></el-input>
             </div>
-
             <span class="lf mlnewnum p">To：</span>
             <div class="pr lf">
-              <input class="input-txt" type="date" v-model="endtime" />
+              <el-input class="time" type="date" v-model="endtime"></el-input>
             </div>
             <el-button class="searchs" type="primary" @click="search_handler()">搜索</el-button>
           </div>
@@ -197,8 +196,8 @@ export default {
 <style scoped>
 .screen-wrap .tits-h3 {
   width: 100%;
-  height: 0.6rem;
-  line-height: 0.6rem;
+  height: 45px;
+  line-height: 45px;
   background-color: #0e4498;
   font-size: 0.14rem;
   color: #fff;
@@ -214,9 +213,9 @@ export default {
 
 .screen-wrap .searchs {
   width: 60px;
-  height: 20px;
-  line-height: 17px;
-  font-size: 13px;
+  height: 24px;
+  line-height: 22px;
+  font-size: 14px;
   padding: 0;
   position: absolute;
   right: 15px;
@@ -299,6 +298,11 @@ export default {
 
 .screen-wrap .mlnumber .p {
   font-size: 14px;
+  margin-right: 8px;
+}
+
+.screen-wrap .mlnumber .time {
+  width: 150px;
 }
 
 .screen-wrap .input-txt {
@@ -310,7 +314,7 @@ export default {
 }
 
 .screen-wrap .mlnewnum {
-  margin-left: .4rem
+  margin-left: 18px;
 }
 
 .newnotice-wraps {

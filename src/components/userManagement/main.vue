@@ -164,7 +164,7 @@
                         <span class="icon-ht20"></span>
                         <p class="zdp">巡检管理</p>
                     </div>
-                    <div class="lf shenlvs h157 orange border">
+                    <div class="lf shenlvs h157 orange border" @click="usermanagerHandle">
                         <span class="icon-ht21"></span>
                         <p class="zdp">用户管理</p>
                     </div>
@@ -178,10 +178,14 @@
 export default {
     name: 'userManagement',
     components: {
-
     },
     mounted() {
         this.$store.commit('UPDATEISLOGIN', true);
+    },
+    methods: {
+        usermanagerHandle() {
+            console.log('usermanagerHandle')
+        }
     },
 }
 </script>
@@ -476,4 +480,5 @@ export default {
 
 .icon-ht29:before {
     left: .37rem
-}</style>
+}
+</style>
