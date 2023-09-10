@@ -70,6 +70,7 @@
 <script>
 //引入jQuery
 import '../../assets/js/jquery-1.9.1.min.js';
+import * as XLSX from 'xlsx';
 // import title from '../title';
 
 
@@ -211,7 +212,32 @@ export default {
       })
     },
     exportHandle() {
-      console.log('exportHandle')
+      let tableDatas = [
+        ['序号', '时间', '总电耗', '总水耗', '总气耗', "单元1电耗", "单元1水耗", "单元1气耗", "单元2电耗", "单元2水耗", "单元2气耗"]//导出表头
+      ] // 表格表头
+      this.tableData.forEach((item, index) => {
+        let rowData = []
+        //导出内容的字段
+        rowData = [
+          index + 1,
+          item.time.toLocaleDateString(),
+          item.total_power,
+          item.total_water,
+          item.total_gas,
+          item.unit1_power,
+          item.unit1_water,
+          item.unit1_gas,
+          item.unit2_power,
+          item.unit2_water,
+          item.unit2_gas
+        ]
+        tableDatas.push(rowData)
+      })
+      let workSheet = XLSX.utils.aoa_to_sheet(tableDatas);
+      let bookNew = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(bookNew, workSheet, '作品名称') // 工作簿名称
+      let name = 'EnergyConsumptionData' + new Date().toLocaleDateString() + '.xlsx'
+      XLSX.writeFile(bookNew, name) // 保存的文件名
     },
     //表格重新加载数据
     loadingData: function () {

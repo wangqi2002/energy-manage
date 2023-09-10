@@ -14,6 +14,7 @@
     "echarts": "^4.0.4",
     "echarts-wordcloud": "^1.1.3",
     "element-ui": "^2.3.3",
+    "file-saver": "^2.0.5",
     "vue": "^2.5.2",
     "vue-gemini-scrollbar": "^2.0.0",
     "vue-router": "^3.0.1",
