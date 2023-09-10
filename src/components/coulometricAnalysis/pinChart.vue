@@ -13,7 +13,7 @@
             <div class="pr lf">
               <input class="input-txt" type="date" v-model="endtime" />
             </div>
-            <span class="pa searchs" @click="search_handler()"></span>
+            <el-button class="searchs" type="primary" @click="search_handler()">搜索</el-button>
           </div>
         </div>
       </div>
@@ -168,12 +168,13 @@ export default {
 }
 
 .screen-wrap .searchs {
-  width: 18px;
-  height: 18px;
-  background: url(/static/images/ss.1cc7a28.png) no-repeat;
-  position: absolute;
-  top: .2rem;
-  right: 0.8rem;
+  width: 60px;
+  height: 20px;
+  line-height: 17px;
+  font-size: 13px;
+  padding: 0;
+  position: relative;
+  right: -72px;
 }
 
 .com-sel {
@@ -253,7 +254,6 @@ export default {
   height: 0.3rem;
   width: 1.8rem;
   padding: 0 0.1rem;
-  margin-left: 5px;
   border-radius: 4px;
   background-color: white;
 }
