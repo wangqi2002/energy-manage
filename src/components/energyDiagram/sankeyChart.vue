@@ -468,8 +468,8 @@ export default {
 <style scoped>
 .screen-wrap .tits-h3 {
   width: 100%;
-  height: 0.6rem;
-  line-height: 0.6rem;
+  height: 45px;
+  line-height: 45px;
   background-color: #0e4498;
   font-size: 0.14rem;
   color: #fff;
@@ -480,11 +480,11 @@ export default {
 
 .screen-wrap {
   height: 7.0rem;
-  width: 96%;
+  width: 98%;
 }
 
 .screen-wrap .searchs {
-  width: 80px;
+  width: 100px;
   height: 0.36rem;
   line-height: 0.36rem;
   font-size: 14px;

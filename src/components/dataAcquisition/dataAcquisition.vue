@@ -51,6 +51,9 @@
         <el-row class="mypage"
           style="margin-top:0.3rem;background:#002c6a;border-radius: 4px;font-size: 0.12rem;color: #fff;" type="flex"
           justify="end">
+          <el-col :span="6">
+            <el-button class="export-btn" type="primary" @click="exportHandle">导出</el-button>
+          </el-col>
           <el-col :span="18">
             <el-pagination style="float: right;margin-right: 0.2rem;" @size-change="pageSizeChange"
               @current-change="currentPageChange" :current-page="currentPage" :page-sizes="[10, 20, 30, 50]"
@@ -207,6 +210,9 @@ export default {
         }
       })
     },
+    exportHandle() {
+      console.log('exportHandle')
+    },
     //表格重新加载数据
     loadingData: function () {
       var _self = this;
@@ -215,76 +221,6 @@ export default {
         console.info("加载数据成功");
         _self.loading = false;
       }, 300);
-    },
-    //表格编辑事件
-    editClick: function (row) {
-      this.editFormVisible = true;
-      this.editForm = Object.assign({}, row);
-    },
-    //表格删除事件
-    deleteClick: function (row) {
-      var _self = this;
-      this.$confirm('确认删除' + row.name + '吗?', '提示', {
-        type: 'warning'
-      }).then(function () {
-        _self.$message({
-          message: row.name + '删除成功',
-          type: 'success'
-        });
-        _self.loadingData();//重新加载数据
-      }).catch(function (e) {
-        if (e != "cancel")
-          console.log("出现错误：" + e);
-      });
-    },
-    //新建事件
-    addClick: function () {
-      var _self = this;
-      this.editFormVisible = true;
-      //_self.loadingData();//重新加载数据
-    },
-    //表格查询事件
-    searchClick: function () {
-      alert("搜索");
-      var _self = this;
-      _self.loadingData();//重新加载数据
-    },
-    //表格勾选事件
-    selectionChange: function (val) {
-      for (var i = 0; i < val.length; i++) {
-        var row = val[i];
-      }
-      this.multipleSelection = val;
-      console.info(val);
-    },
-    //删除所选，批量删除
-    removeSelection: function () {
-      var _self = this;
-      var multipleSelection = this.multipleSelection;
-      if (multipleSelection.length < 1) {
-        _self.$message({
-          message: '请至少选中一条记录',
-          type: 'error'
-        });
-        return;
-      }
-      var ids = "";
-      for (var i = 0; i < multipleSelection.length; i++) {
-        var row = multipleSelection[i];
-        ids += row.name + ","
-      }
-      this.$confirm('确认删除' + ids + '吗?', '提示', {
-        type: 'warning'
-      }).then(function () {
-        _self.$message({
-          message: ids + '删除成功',
-          type: 'success'
-        });
-        _self.loadingData();//重新加载数据
-      }).catch(function (e) {
-        if (e != "cancel")
-          console.log("出现错误：" + e);
-      });
     },
     //分页大小修改事件
     pageSizeChange: function (val) {
@@ -300,10 +236,6 @@ export default {
       this.currentPage = val;
       console.log('当前页: ' + val);
       _self.loadingData();//重新加载数据
-    },
-    //保存点击事件
-    editSubmit: function () {
-      console.info(this.editForm);
     }
   },
   components: {
@@ -560,6 +492,15 @@ export default {
   color: white;
   margin-right: 15px;
   margin-top: 10px;
+}
+
+.export-btn {
+  width: 80px;
+  height: 22px;
+  line-height: 22px;
+  padding: 0;
+  margin-top: 5px;
+  margin-left: 15px;
 }
 </style>
 

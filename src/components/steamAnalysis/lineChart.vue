@@ -238,7 +238,7 @@ export default {
 
 .screen-wrap {
   height: 7.0rem;
-  width: 48%;
+  width: 49%;
 }
 
 .screen-wrap .searchs {

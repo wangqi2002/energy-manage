@@ -8,7 +8,6 @@
             <div class="pr lf">
               <input class="input-txt" type="date" v-model="bgntime" />
             </div>
-
             <span class="lf mlnewnum p">To：</span>
             <div class="pr lf">
               <input class="input-txt" type="date" v-model="endtime" />
@@ -210,7 +209,7 @@ export default {
 
 .screen-wrap {
   height: 7.0rem;
-  width: 48%;
+  width: 49%;
 }
 
 .screen-wrap .searchs {

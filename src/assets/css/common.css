@@ -328,13 +328,10 @@ select {
   /*padding-right: 14px;*/
 }
 .mt22 {
-  margin-top: 0.22rem;
-}
-.mt12 {
   margin-top: 0.12rem;
 }
 .ml {
-  margin-left: 1.3%;
+  margin-left: 1%;
 }
 
 .gm-scrollbar.-vertical {
