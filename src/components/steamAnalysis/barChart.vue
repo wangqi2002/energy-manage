@@ -4,12 +4,12 @@
       <div class="tits-h3 clearfix">
         <div class="lf">
           <div class="clearfix mlnumber">
-            <span class="lf">From：</span>
+            <span class="lf p">From：</span>
             <div class="pr lf">
               <input class="input-txt" type="date" v-model="bgntime" />
             </div>
 
-            <span class="lf mlnewnum">To：</span>
+            <span class="lf mlnewnum p">To：</span>
             <div class="pr lf">
               <input class="input-txt" type="date" v-model="endtime" />
             </div>
@@ -218,8 +218,10 @@ export default {
   line-height: 17px;
   font-size: 13px;
   padding: 0;
-  position: relative;
-  right: -72px;
+  position: absolute;
+  right: 15px;
+  transform: translateY(-50%);
+  top: 50%;
 }
 
 .com-sel {
@@ -292,7 +294,11 @@ export default {
 }
 
 .screen-wrap .mlnumber {
-  margin-left: .6rem;
+  margin-left: 15px;
+}
+
+.screen-wrap .mlnumber .p {
+  font-size: 14px;
 }
 
 .screen-wrap .input-txt {

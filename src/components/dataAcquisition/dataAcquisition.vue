@@ -525,10 +525,11 @@ export default {
 }
 
 .infoRelease_operate {
-  width: 100%;
+  width: calc(100% - 10px);
   height: 45px;
   line-height: 45px;
   background-color: #0e4498;
+  padding: 0 5px;
   margin-bottom: 8px;
   border-radius: 5px;
 }
@@ -536,8 +537,7 @@ export default {
 .infoRelease_operate .p {
   display: inline-block;
   font-size: 16px;
-  width: 50px;
-  margin: auto 10px auto 5px;
+  margin: auto 5px auto 15px;
   text-align: right;
   color: white;
 }
@@ -547,7 +547,7 @@ export default {
 }
 
 .time .el-input__inner {
-  height: 25px;
+  height: 0.36rem;
   font-size: 16px;
 }
 
@@ -559,7 +559,7 @@ export default {
   font-size: 16px;
   color: white;
   margin-right: 15px;
-  margin-top: 8px;
+  margin-top: 10px;
 }
 </style>
 

@@ -4,16 +4,16 @@
       <div class="tits-h3 clearfix">
         <div class="lf">
           <div class="clearfix mlnumber">
-            <span class="lf">From：</span>
+            <span class="lf p">From：</span>
             <div class="pr lf">
-              <input class="input-txt" type="date" v-model="bgntime" />
+              <el-input class="time" type="date" v-model="bgntime"></el-input>
             </div>
 
-            <span class="lf mlnewnum">To：</span>
+            <span class="lf mlnewnum p">To：</span>
             <div class="pr lf">
-              <input class="input-txt" type="date" v-model="endtime" />
+              <el-input class="time" type="date" v-model="endtime"></el-input>
             </div>
-            <span class="pa searchs" @click="search_handler()"></span>
+            <el-button class="searchs" type="primary" @click="search_handler()">搜索</el-button>
           </div>
         </div>
       </div>
@@ -484,12 +484,20 @@ export default {
 }
 
 .screen-wrap .searchs {
-  width: 16px;
-  height: 16px;
-  background: url(../../../static/images/ss.png) no-repeat;
+  width: 80px;
+  height: 0.36rem;
+  line-height: 0.36rem;
+  font-size: 14px;
+  padding: 0;
   position: absolute;
-  margin-left: 0.3rem;
-  top: .17rem
+  right: 15px;
+  transform: translateY(-50%);
+  top: 50%;
+}
+
+.time .el-input__inner {
+  height: 0.36rem;
+  font-size: 16px;
 }
 
 .com-sel {
@@ -562,7 +570,10 @@ export default {
 }
 
 .screen-wrap .mlnumber {
-  margin-left: 1.2rem;
+  margin-left: 15px;
+}
+.screen-wrap .mlnumber .p {
+  font-size: 14px;
 }
 
 .screen-wrap .input-txt {

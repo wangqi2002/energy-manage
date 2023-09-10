@@ -3,9 +3,9 @@
     <div class="infoRelease mtt">
       <div class="infoRelease-wrap">
         <div class="infoRelease_operate">
-          <p class="p">开始时间</p>
+          <p class="p">From</p>
           <el-input class="time" type="date" v-model="bgntime"></el-input>
-          <p class="p">结束时间</p>
+          <p class="p">To</p>
           <el-input class="time" type="date" v-model="endtime"></el-input>
           <el-button class="b" type="primary" @click="search_handler()">搜索</el-button>
           <el-button class="b" type="primary" @click="loadingData()">刷新</el-button>
@@ -258,7 +258,6 @@ export default {
   width: 100%;
   background: #002d6a;
   border-radius: 4px;
-  padding-top: 0.1rem
 }
 
 #tableView .infoRelease-inner {
@@ -459,16 +458,18 @@ export default {
 }
 
 .infoRelease_operate {
-  width: calc(100% - 20px);
-  height: 40px;
-  line-height: 40px;
-  padding: 5px 10px 15px;
+  width: calc(100% - 10px);
+  height: 45px;
+  line-height: 45px;
+  background-color: #0e4498;
+  padding: 0 5px;
+  margin-bottom: 8px;
+  border-radius: 5px;
 }
 
 .infoRelease_operate .p {
   display: inline-block;
   font-size: 16px;
-  width: 70px;
   margin: auto 5px auto 15px;
   color: white;
 }
@@ -490,7 +491,7 @@ export default {
   font-size: 16px;
   color: white;
   margin-right: 15px;
-  margin-top: 8px;
+  margin-top: 10px;
 }
 </style>
 
