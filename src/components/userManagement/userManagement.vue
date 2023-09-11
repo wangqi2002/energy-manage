@@ -273,7 +273,7 @@ export default {
 }
 
 #user-table .user-table .el-table th,
-.el-table tr {
+#user-table .user-table .el-table tr {
     background-color: #fff;
 }
 

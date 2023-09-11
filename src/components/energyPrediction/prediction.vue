@@ -358,7 +358,7 @@ export default {
 }
 
 .area-inner {
-  width: 16rem;
+  width: 18rem;
   height: 6.8rem;
   background-color: #173881;
   border-radius: 4px;
