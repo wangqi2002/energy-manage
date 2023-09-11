@@ -197,7 +197,6 @@ export default {
     methods: {
         usermanagerHandle() {
             this.dialogVisible = true
-            console.log('usermanagerHandle', this.dialogVisible)
         }
     },
 }

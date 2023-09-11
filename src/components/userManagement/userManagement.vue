@@ -1,10 +1,10 @@
 <template>
     <div class="content-page">
         <div class="content-main">
-            <div class="filter-box" v-if="stand == 1">
-                <el-form :inline="true" :model="filterForm" class="demo-form-inline">
+            <div class="filter-box" v-if="userInfo.user_stand == 1">
+                <el-form :inline="true" :model="filterForm" class="form-inline">
                     <el-form-item label="用户姓名">
-                        <el-input v-model="filterForm.username" placeholder="用户姓名"></el-input>
+                        <el-input v-model="filterForm.user_name" placeholder="用户姓名"></el-input>
                     </el-form-item>
                     <el-form-item>
                         <el-button type="primary" @click="onSubmitFilter">查询</el-button>
@@ -14,8 +14,8 @@
                     </el-form-item>
                 </el-form>
             </div>
-            <div class="form-table-box" v-if="stand == 0">
-                <el-table class="user-table" :data="tableData" style="width: 100%" border stripe>
+            <div class="form-table-box" v-if="userInfo.user_stand == 0">
+                <el-table id="user-table" class="user-table" :data="tableData" style="width: 100%" border stripe>
                     <el-table-column type="index" label="ID" width="60"> </el-table-column>
                     <el-table-column label="头像" width="120">
                         <template slot-scope="scope">
@@ -26,13 +26,13 @@
                     <el-table-column prop="user_stand" label="身份"></el-table-column>
                 </el-table>
             </div>
-            <div class="page-box" v-if="stand == 0">
+            <div class="page-box" v-if="userInfo.user_stand == 0">
                 <el-pagination background @current-change="handlePageChange" :current-page.sync="page" :page-size="4"
                     layout="total, prev, pager, next" :total="total">
                 </el-pagination>
             </div>
-            <div class="form-table-box" v-if="stand == 1">
-                <el-table class="user-table" :data="tableData" style="width: 100%" border stripe>
+            <div class="form-table-box" v-if="userInfo.user_stand == 1">
+                <el-table id="user-table" class="user-table" :data="tableData" style="width: 100%" border stripe>
                     <el-table-column type="index" label="ID" width="60"> </el-table-column>
                     <el-table-column label="头像" width="120">
                         <template slot-scope="scope">
@@ -48,22 +48,22 @@
                         </template></el-table-column>
                 </el-table>
             </div>
-            <div class="page-box" v-if="stand == 1">
+            <div class="page-box" v-if="userInfo.user_stand == 1">
                 <el-pagination background @current-change="handlePageChange" :current-page.sync="page" :page-size="4"
                     layout="total, prev, pager, next" :total="total">
                 </el-pagination>
             </div>
         </div>
-        <el-dialog width="40%" title="添加用户" :visible.sync="innerVisible" append-to-body>
+        <el-dialog width="40%" title="添加用户" :visible.sync="addVisible" append-to-body>
             <el-form :model="form">
                 <el-form-item label="用户姓名" :label-width="formLabelWidth">
-                    <el-input v-model="form.username" autoComplete="off"></el-input>
+                    <el-input v-model="form.user_name" autoComplete="off"></el-input>
                 </el-form-item>
                 <el-form-item label="用户权限" :label-width="formLabelWidth">
-                    <el-input v-model="form.stand" autoComplete="off"></el-input>
+                    <el-input v-model="form.user_stand" autoComplete="off"></el-input>
                 </el-form-item>
                 <el-form-item label="用户头像" :label-width="formLabelWidth">
-                    <el-upload class="upload-demo" action="" :file-list="form.fileList" :limit="1" list-type="picture"
+                    <el-upload class="upload-demo" action="" :file-list="form.user_avatar" :limit="1" list-type="picture"
                         :on-change="handleChange" :auto-upload="false">
                         <el-button slot="trigger" size="small" type="primary">选取图片</el-button>
                     </el-upload>
@@ -71,7 +71,27 @@
             </el-form>
             <div slot="footer" class="dialog-footer">
                 <el-button @click="handleCancel">取 消</el-button>
-                <el-button type="primary" @click="handleConfirm">确 定</el-button>
+                <el-button type="primary" @click="handleAddConfirm">确 定</el-button>
+            </div>
+        </el-dialog>
+        <el-dialog width="40%" title="修改用户" :visible.sync="editVisible" append-to-body>
+            <el-form :model="form">
+                <el-form-item label="用户姓名" :label-width="formLabelWidth">
+                    <el-input v-model="form.user_name" autoComplete="off"></el-input>
+                </el-form-item>
+                <el-form-item label="用户权限" :label-width="formLabelWidth">
+                    <el-input v-model="form.user_stand" autoComplete="off"></el-input>
+                </el-form-item>
+                <el-form-item label="用户头像" :label-width="formLabelWidth">
+                    <el-upload class="upload-demo" action="" :file-list="form.user_avatar" :limit="1" list-type="picture"
+                        :on-change="handleChange" :auto-upload="false">
+                        <el-button slot="trigger" size="small" type="primary">选取图片</el-button>
+                    </el-upload>
+                </el-form-item>
+            </el-form>
+            <div slot="footer" class="dialog-footer">
+                <el-button @click="handleCancel">取 消</el-button>
+                <el-button type="primary" @click="handleEditConfirm">确 定</el-button>
             </div>
         </el-dialog>
     </div>
@@ -82,9 +102,14 @@ export default {
     data() {
         return {
             page: 1,
-            total: 0,
+            total: 20,
+            userInfo: {
+                user_name: '',
+                user_avatar: '',
+                user_stand: '',
+            },
             filterForm: {
-                username: ''
+                user_name: ''
             },
             tableData: [
                 {
@@ -108,85 +133,136 @@ export default {
                     user_stand: '普通用户'
                 }
             ],
-            stand: 1,
-            loginInfo: null,
-            username: '',
-            innerVisible: false,
+            addVisible: false,
+            editVisible: false,
             formLabelWidth: '80px',
             form: {
-                username: '',
-                stand: '',
-                fileList: []
+                user_name: '',
+                user_stand: '',
+                user_avatar: []
             }
         }
     },
     methods: {
         handleEdit(row) {
             console.log('handleEdit', row)
+            this.editVisible = true
         },
         handleDelete(row) {
             console.log('handleDelete', row)
+            $.ajax({
+                url: this.baseURL.serverSrc + '',  // 后端地址
+                type: '',
+                data: {},
+                dataType: 'json',
+                success: function (data) { //后端返回的json数据（此处data为json对象）
+                    console.log('成功', data);
+                },
+                error: function () {
+                    alert('异常')
+                }
+            });
         },
         handlePageChange(val) {
             this.page = val
-            //保存到localStorage
-            localStorage.setItem('userPage', this.page)
-            this.getList()
         },
         onSubmitFilter() {
             this.findUser()
         },
         getList() {
-            // this.axios
-            //     .get('user', {
-            //         params: {
-            //             page: this.page
-            //         }
-            //     })
-            //     .then(response => {
-            //         console.log(response.data)
-            //         this.tableData = response.data.userData
-            //         this.page = response.data.page
-            //         this.total = response.data.count
-            //     })
-            // if (!this.loginInfo) {
-            //     this.loginInfo = JSON.parse(window.localStorage.getItem('userInfo') || null)
-            //     this.username = this.loginInfo.admin_name
-            // }
+            $.ajax({
+                url: this.baseURL.serverSrc + '',  // 后端地址
+                type: '',
+                data: {},
+                dataType: 'json',
+                success: function (data) { //后端返回的json数据（此处data为json对象）
+                    console.log('成功', data);
+                },
+                error: function () {
+                    alert('异常')
+                }
+            });
         },
         findUser() {
-            console.log(this.filterForm.username)
-            this.axios
-                .get('user/find', {
-                    params: {
-                        username: this.filterForm.username
-                    }
-                })
-                .then(response => {
-                    console.log(response)
-                    this.tableData = response.data.userData
-                    this.page = response.data.page
-                    this.total = response.data.count
-                })
+            $.ajax({
+                url: this.baseURL.serverSrc + '',  // 后端地址
+                type: '',
+                data: {},
+                dataType: 'json',
+                success: function (data) { //后端返回的json数据（此处data为json对象）
+                    console.log('成功', data);
+                },
+                error: function () {
+                    alert('异常')
+                }
+            });
         },
         addUser() {
-            this.innerVisible = true
+            this.addVisible = true
+            if (this.filterForm.user_name != null && this.filterForm.user_name != undefined) {
+                this.form.user_name = this.filterForm.user_name
+            }
             console.log('addUser')
         },
         handleChange(file, fileList) {
-            this.form.fileList = fileList
+            this.form.user_avatar = fileList
         },
         handleCancel() {
-            this.innerVisible = false
+            this.addVisible = false
+            this.editVisible = false
+            this.form = {
+                user_name: '',
+                user_stand: '',
+                user_avatar: []
+            }
         },
-        handleConfirm() {
-            this.innerVisible = false
+        handleAddConfirm() {
+            this.addVisible = false
             console.log(this.form)
+            $.ajax({
+                url: this.baseURL.serverSrc + '',  // 后端地址
+                type: '',
+                data: {},
+                dataType: 'json',
+                success: function (data) { //后端返回的json数据（此处data为json对象）
+                    console.log('成功', data);
+                },
+                error: function () {
+                    alert('异常')
+                }
+            });
+            this.form = {
+                user_name: '',
+                user_stand: '',
+                user_avatar: []
+            }
+        },
+        handleEditConfirm() {
+            this.addVisible = false
+            console.log(this.form)
+            $.ajax({
+                url: this.baseURL.serverSrc + '',  // 后端地址
+                type: '',
+                data: {},
+                dataType: 'json',
+                success: function (data) { //后端返回的json数据（此处data为json对象）
+                    console.log('成功', data);
+                },
+                error: function () {
+                    alert('异常')
+                }
+            });
+            this.form = {
+                user_name: '',
+                user_stand: '',
+                user_avatar: []
+            }
         },
     },
     components: {},
     mounted() {
         // this.getList()
+        this.userInfo = this.$store.state.userInfo
     }
 }
 </script>
@@ -194,6 +270,11 @@ export default {
 <style>
 .user-table table td {
     float: none;
+}
+
+#user-table .user-table .el-table th,
+.el-table tr {
+    background-color: #fff;
 }
 
 .el-table th.gutter {
