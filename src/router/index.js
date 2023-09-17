@@ -30,73 +30,109 @@ export default {
     {
       path: '/integratedScreen',
       name: 'integratedScreen',
-      component: integratedScreen
-      // integratedScreen
+      component: integratedScreen,
+      meta: {
+        requireAuth: true      //true 代表需要登录才能进入A
+      }
     },
     //水量分析
     {
       path: '/waterAnalysis',
       name: 'waterAnalysis',
-      component: waterAnalysis
+      component: waterAnalysis,
+      meta: {
+        requireAuth: true      //true 代表需要登录才能进入A
+      }
     },
     //报表系统
     {
       path: '/report',
       name: 'report',
-      component: report
+      component: report,
+      meta: {
+        requireAuth: true      //true 代表需要登录才能进入A
+      }
     },
     //能源桑基图
     {
       path: '/energySankeyChart',
       name: 'energySankeyChart',
-      component: energySankeyChart
+      component: energySankeyChart,
+      meta: {
+        requireAuth: true      //true 代表需要登录才能进入A
+      }
     },
     //能源预测
     {
       path: '/energyPrediction',
       name: 'energyPrediction',
-      component: energyPrediction
+      component: energyPrediction,
+      meta: {
+        requireAuth: true      //true 代表需要登录才能进入A
+      }
     },
     //能源费用
     {
       path: '/energyCost',
       name: 'energyCost',
-      component: energyCost
+      component: energyCost,
+      meta: {
+        requireAuth: true      //true 代表需要登录才能进入A
+      }
     },
     //数据采集
     {
       path: '/dataAcquisition',
       name: 'dataAcquisition',
-      component: dataAcquisition
+      component: dataAcquisition,
+      meta: {
+        requireAuth: true      //true 代表需要登录才能进入A
+      }
     },
+    //用户管理
     {
       path: '/userManagement',
       name: 'userManagement',
-      component: userManagement
+      component: userManagement,
+      meta: {
+        requireAuth: true      //true 代表需要登录才能进入A
+      }
     },
     //地理信息
     {
       name: 'scMap',
       path: '/scMap',
-      component: ScenicMap
+      component: ScenicMap,
+      meta: {
+        requireAuth: true      //true 代表需要登录才能进入A
+      }
     },
     //电量分析
     {
       name: 'coulometricAnalysis',
       path: '/coulometricAnalysis',
-      component: coulometricAnalysis
+      component: coulometricAnalysis,
+      meta: {
+        requireAuth: true      //true 代表需要登录才能进入A
+      }
     },
     //汽量分析
     {
       name: 'steamAnalysis',
       path: '/steamAnalysis',
-      component: steamAnalysis
+      component: steamAnalysis,
+      meta: {
+        requireAuth: true      //true 代表需要登录才能进入A
+      }
     },
     //视频系统
     {
       name: 'video',
       path: '/video',
-      component: video
+      component: video,
+      meta: {
+        requireAuth: true      //true 代表需要登录才能进入A
+      }
     }
   ]
 }
