@@ -17,10 +17,10 @@
               <!--列表-->
               <el-row>
                 <el-table :data="tableData.slice((currentPage - 1) * pageSize, currentPage * pageSize)"
-                  v-loading.body="loading" border @selection-change="selectionChange" style="width: 100%;">
-                  <el-table-column prop="id" label="序号" style="width: ">
+                  v-loading.body="loading" border style="width: 100%;">
+                  <el-table-column prop="id" label="序号" style="width: 6%">
                   </el-table-column>
-                  <el-table-column prop="time" label="时间" :formatter="dateFormat" style="width: 50%">
+                  <el-table-column prop="time" label="时间" :formatter="dateFormat" style="width: 70%">
                   </el-table-column>
                   <el-table-column prop="total_power" label="总电耗" style="width: 10%">
                   </el-table-column>
@@ -182,14 +182,16 @@ export default {
   },
   methods: {
     dateFormat(row, column) {
-      var date = new Date(row.time);
+      console.log(row.time)
+      var date = new Date(row.time)
+
       /**
        * 日期+时间: toLocaleString()
        * 日期: toLocaleDateString()
        * 时间: toLocaleTimeString()
        */
       return date.toLocaleString()
-      // return row.time.toLocaleString()
+      //return date.toLocaleDateString()
       // return row.time.toLocaleTimeString()
     },
     search_handler() {
@@ -220,7 +222,7 @@ export default {
         //导出内容的字段
         rowData = [
           index + 1,
-          item.time.toLocaleDateString(),
+          new Date(item.time).toLocaleString(),
           item.total_power,
           item.total_water,
           item.total_gas,

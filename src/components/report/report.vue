@@ -19,7 +19,7 @@
               <el-row>
                 <el-table :data="tableData.slice((currentPage - 1) * pageSize, currentPage * pageSize)"
                   v-loading.body="loading" border @selection-change="selectionChange" style="width: 100%;">
-                  <el-table-column prop="time" label="时间" style="width: 50%">
+                  <el-table-column prop="time" label="时间" :formatter="dateFormat" style="width: 50%">
                   </el-table-column>
                   <el-table-column prop="tank_pressure" label="罐内压力" style="width: 10%">
                   </el-table-column>
@@ -111,6 +111,19 @@ export default {
     //    this.change();
   },
   methods: {
+    dateFormat(row, column) {
+      console.log(row.time)
+      var date = new Date(row.time)
+
+      /**
+       * 日期+时间: toLocaleString()
+       * 日期: toLocaleDateString()
+       * 时间: toLocaleTimeString()
+       */
+      return date.toLocaleString()
+      //return date.toLocaleDateString()
+      // return row.time.toLocaleTimeString()
+    },
     search_handler() {
       var _self = this;
       // console.log(_self);

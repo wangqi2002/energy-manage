@@ -27,6 +27,8 @@
   </div>
 </template>
 <script>
+import title from '../title';
+import globalURL from '../GlobalTag'
 export default {
   name: 'unit2Steam',
   data() {

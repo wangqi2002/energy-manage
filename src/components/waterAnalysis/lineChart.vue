@@ -131,7 +131,7 @@ export default {
             type: 'category',//设置X轴的类型
             name: 'Time',
             axisLabel: {//坐标轴刻度标签的相关设置。
-              color: "#000080",//设置颜色
+              color: "#000120",//设置颜色
               fontSize: '12',//字体大小
               interval: 0,//设置每个相邻之间少1个数
               rotate: 50,//刻度标签旋转的角度
@@ -173,7 +173,7 @@ export default {
 
         series: [
           {
-            type: 'bar',
+            type: 'line',
             name: 'unit1_water',
             data: myDataY1,
             itemStyle: {

@@ -201,7 +201,7 @@ export default {
 
         series: [
           {
-            type: 'bar',
+            type: 'line',
             name: 'unit1_steam',
             data: myDataY1,
             itemStyle: {

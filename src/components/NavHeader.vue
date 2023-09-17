@@ -2,8 +2,8 @@
   <div>
     <div class="top-warp">
       <div class="grid-content topheader">
-        <img class="logo1" src="../../static/images/logo2.png" alt="">
-        <div class="title">企业综合信息管理平台</div>
+        <img class="logo1" src="../../static/images/logo2.jpg" alt="">
+        <div class="title">安徽迪纳特智能信息管理平台</div>
         <div class="login-information">
           <img class="avatar" src="../../static/images/avatar.png" v-popover:popover />
         </div>

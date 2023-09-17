@@ -17,7 +17,7 @@ Vue.use(ElementUI);
 // 引入地图样式
 import './assets/js/index.js';
 import './assets/js/mapv.js';
-import globalvariable from './router/global_variable.js'
+import  globalvariable from './router/global_variable.js'
 Vue.prototype.baseURL = globalvariable
 
 import Axios from 'axios'
@@ -25,17 +25,6 @@ Vue.prototype.$ajax = Axios;
 import routerConfig from './router'
 Vue.use(Router);
 const router = new Router(routerConfig);
-router.beforeEach((to, from, next) => {
-  if (to.meta.requireAuth) {
-    if (store.state.isLogin) {
-      next()
-    } else {
-      next({ path: '/Login' })
-    }
-  } else {
-    next()
-  }
-})
 //引入echarts
 import echarts from 'echarts'
 Vue.prototype.$echarts = echarts
@@ -53,6 +42,6 @@ new Vue({
   template: '<App/>'
 });
 //广播一个全局事件
-window.onresize = function () {
+window.onresize = function(){
   window.bus.$emit("resize");
 }
