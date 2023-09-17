@@ -1,7 +1,7 @@
 <template>
   <div class="video mt22">
     <video autoplay="autoplay" name="media" style="width:100%; object-fit: fill;border:1px solid #3b72ee;">
-      <source src="../../../static/video/industry.mp4" type="video/mp4">
+      <source src="../../../static/video/video.mp4" type="video/mp4">
     </video>
   </div>
 </template>

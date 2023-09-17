@@ -6,7 +6,7 @@
                 <div class="lf video pr">
                     <video autoplay="autoplay" name="media"
                         style="width:100%; height:2.88rem; object-fit: fill;border:1px solid #3b72ee;">
-                        <source src="../../../static/video/wit.mp4" type="video/mp4">
+                        <source src="../../../static/video/video_two.mp4" type="video/mp4">
                     </video>
                     <p><span>摄像头：B </span><span>位置：层析 </span></p>
                 </div>
