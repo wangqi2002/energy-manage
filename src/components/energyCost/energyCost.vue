@@ -19,7 +19,7 @@
                   v-loading.body="loading" border @selection-change="selectionChange" style="width: 100%;">
                   <el-table-column prop="id" label="序号" style="width: 6%">
                   </el-table-column>
-                  <el-table-column prop="time" label="时间" style="width: 50%">
+                  <el-table-column prop="time" label="时间" :formatter="dateFormat" style="width: 70%">
                   </el-table-column>
                   <el-table-column prop="total_power" label="总电耗" style="width: 10%">
                   </el-table-column>
@@ -122,6 +122,17 @@ export default {
     this.$store.commit('UPDATEISLOGIN', true);
   },
   methods: {
+    dateFormat(row, column) {
+      var date = new Date(row.time);
+      /**
+       * 日期+时间: toLocaleString()
+       * 日期: toLocaleDateString()
+       * 时间: toLocaleTimeString()
+       */
+      return date.toLocaleString()
+      // return row.time.toLocaleString()
+      // return row.time.toLocaleTimeString()
+    },
     search_handler() {
       var _self = this;
       console.log(_self);

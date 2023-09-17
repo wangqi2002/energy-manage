@@ -79,13 +79,13 @@ export default {
       });
     },
     dateFormat(date) {
-      console.log(date)
+      var date = new Date(date)
       /**
        * 日期+时间: toLocaleString()
        * 日期: toLocaleDateString()
        * 时间: toLocaleTimeString()
        */
-      return date.time.toLocaleDateString()
+      return date.toLocaleString()
     },
 
     drawBar() {

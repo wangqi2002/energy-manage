@@ -22,7 +22,8 @@ export default {
     let validatorPassword = (rule, value, callback) => {
       if (value === "") {
         callback(new Error("请输入密码"));
-      } else {
+      }
+      else {
         if (this.loginForm.password.length !== 6) {
           callback(new Error("请输入6位数密码"));
         } else if (this.loginForm.password !== '111111') {
@@ -30,6 +31,7 @@ export default {
         }
         callback();
       }
+      // callback();
     };
     return {
       loading: false,
@@ -51,19 +53,64 @@ export default {
   methods: {
     submitForm(loginForm) {
       this.$refs[loginForm].validate(valid => {
+        // if (valid) {
+        //   $.ajax({
+        //     url: this.baseURL.serverSrc + 'login',  // 后端地址
+        //     type: 'post',
+        //     data: {
+        //       "name": this.loginForm.account,
+        //       "password": this.loginForm.password,
+        //     },
+        //     dataType: 'json',
+        //     success: function (data) { //后端返回的json数据（此处data为json对象）
+        //       console.log('成功');
+        //       if (data[0].code == 200) {
+        //         this.loading = true;
+        //         setTimeout(() => {
+        //           this.$store.commit('UPDATEISLOGIN', true);
+        //           this.$store.commit('UPDATEUSERINFO', {
+        //             name: data[2].value.name,
+        //             role: data[2].value.role
+        //           });
+        //           this.$router.push({ name: 'integratedScreen' })
+        //           this.loading = false;
+        //         }, 1000)
+        //       } else if (data[0].code == 300) {
+        //         console.log(data[1].msg)
+        //         this.$notify({
+        //           title: '提示',
+        //           message: data[1].msg,
+        //           duration: 2000
+        //         });
+        //       } else if (data[0].code == 400) {
+        //         console.log(data[1].msg)
+        //         this.$notify({
+        //           title: '提示',
+        //           message: data[1].msg,
+        //           duration: 2000
+        //         });
+        //       }
+        //     },
+        //     error: function () {
+        //       alert('异常')
+        //     }
+        //   })
+        // } else {
+        //   console.log("error submit!!");
+        //   return false;
+        // }
+
         if (valid) {
           this.loading = true;
           setTimeout(() => {
             this.$store.commit('UPDATEISLOGIN', true);
             this.$store.commit('UPDATEUSERINFO', {
-              user_name: 'Tom',
-              user_avatar: '1.png',
-              user_stand: '0'
+              name: 'Tom',
+              role: '1'
             });
             this.$router.push({ name: 'integratedScreen' })
             this.loading = false;
           }, 1000)
-
         } else {
           console.log("error submit!!");
           return false;
