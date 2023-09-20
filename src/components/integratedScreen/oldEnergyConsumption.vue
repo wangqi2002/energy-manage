@@ -29,7 +29,7 @@ export default {
       let myChart = this.$echarts.init(document.getElementById('myChart'))
       // 绘制图表
       // 指定图表的配置项和数据
-      var dataAxis = ['4-12', '4-13', '4-14', '4-15', '4-16', '4-17', '4-18'];
+      var dataAxis = ['9-10', '9-11', '9-12', '9-13', '9-14', '9-15', '9-16'];
       var data = [2000, 1802, 1910, 2340, 2200, 2300, 2100];
       var yMax = 3000;
       var dataShadow = [];

@@ -13,7 +13,7 @@
         <heat-map></heat-map>
         <pred-energy-consumption></pred-energy-consumption>
         <chart-two></chart-two>
-      </div>
+      </div> 
       <div class="area3">
         <abnormal></abnormal>
         <week-environmental></week-environmental>
@@ -23,10 +23,10 @@
     </div>
     <div class="footer">
       <div class="foot">
-        <span>今日室外温度：<strong>999</strong></span>
-        <span>今日室外雾霾指数：<strong>999</strong></span>
-        <span>今日室外风速：<strong>999</strong></span>
-        <span>今日页面访问量：<strong>999</strong></span>
+        <span>今日室外温度：<strong>20</strong></span>
+        <span>今日室外雾霾指数：<strong>8</strong></span>
+        <span>今日室外风速：<strong>1.0</strong></span>
+        <span>今日页面访问量：<strong>218</strong></span>
         <!--      <span>其他：<strong>999</strong></span>-->
       </div>
     </div>

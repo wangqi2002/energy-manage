@@ -178,22 +178,6 @@ export default {
         { value: 1, label: "管理员用户" },
       ],
       tableData: [
-        {
-          name: "张三",
-          role: "1",
-        },
-        {
-          name: "李四",
-          role: "0",
-        },
-        {
-          name: "王五",
-          role: "0",
-        },
-        {
-          name: "王海",
-          role: "0",
-        },
       ],
       addVisible: false,
       editVisible: false,
@@ -410,12 +394,13 @@ export default {
 <style>
 .user-table table td {
   float: none;
-}
-
-#user-table .user-table .el-table th,
-#user-table .user-table .el-table tr {
   background-color: #fff;
 }
+
+/* #user-table.user-table.el-table th,
+#user-table.user-table.el-table tr {
+  background-color: #fff !important;
+} */
 
 .el-table th.gutter {
   display: table-cell !important;

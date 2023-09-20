@@ -126,58 +126,6 @@ export default {
   mounted() {
     this.$store.commit('UPDATEISLOGIN', true);
     this.tableData = [
-      {
-        id: '4654',
-        time: new Date(),
-        total_power: '153345',
-        total_water: '23442',
-        total_gas: '135234',
-        unit1_power: '123',
-        unit1_water: '211',
-        unit1_gas: '342',
-        unit2_power: '465',
-        unit2_water: '223',
-        unit2_gas: '732',
-      },
-      {
-        id: '4654',
-        time: new Date(),
-        total_power: '153345',
-        total_water: '23442',
-        total_gas: '135234',
-        unit1_power: '123',
-        unit1_water: '211',
-        unit1_gas: '342',
-        unit2_power: '465',
-        unit2_water: '223',
-        unit2_gas: '732',
-      },
-      {
-        id: '4654',
-        time: new Date(),
-        total_power: '153345',
-        total_water: '23442',
-        total_gas: '135234',
-        unit1_power: '123',
-        unit1_water: '211',
-        unit1_gas: '342',
-        unit2_power: '465',
-        unit2_water: '223',
-        unit2_gas: '732',
-      },
-      {
-        id: '4654',
-        time: new Date(),
-        total_power: '153345',
-        total_water: '23442',
-        total_gas: '135234',
-        unit1_power: '123',
-        unit1_water: '211',
-        unit1_gas: '342',
-        unit2_power: '465',
-        unit2_water: '223',
-        unit2_gas: '732',
-      },
     ]
   },
   methods: {
@@ -214,6 +162,7 @@ export default {
       })
     },
     exportHandle() {
+      console.log('export')
       let tableDatas = [
         ['序号', '时间', '总电耗', '总水耗', '总气耗', "单元1电耗", "单元1水耗", "单元1气耗", "单元2电耗", "单元2水耗", "单元2气耗"]//导出表头
       ] // 表格表头

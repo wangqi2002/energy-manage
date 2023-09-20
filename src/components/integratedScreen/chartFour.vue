@@ -1,5 +1,5 @@
 <template>
-    <div class="lf flowPre ml">
+    <div class="lf flowPre ml mtt">
         <title-h3 :titlemsg="titlemsg"></title-h3>
         <div class="flowPre-wrap">
             <div class="flowPre-inner">
@@ -17,7 +17,7 @@ export default {
     name: 'chartTwo',
     data() {
         return {
-            titlemsg: 'XXXXXXXXXXX'
+            titlemsg: '企业竞争力模型'
         }
     },
     mounted() {
@@ -92,7 +92,7 @@ export default {
 }
 
 .flowPre-inner {
-    height: 100%;
+    height: 3.34rem;
     width: 100%;
     margin: 0 auto;
     background-color: #003885;

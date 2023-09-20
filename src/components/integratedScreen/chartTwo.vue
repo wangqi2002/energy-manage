@@ -17,7 +17,7 @@ export default {
     name: 'chartTwo',
     data() {
         return {
-            titlemsg: 'XXXXXXXXXXX'
+            titlemsg: '能耗占比图'
         }
     },
     mounted() {
@@ -73,11 +73,11 @@ export default {
                             show: false
                         },
                         data: [
-                            { value: 1048, name: 'Engine' },
-                            { value: 735, name: 'Direct' },
-                            { value: 580, name: 'Email' },
-                            { value: 484, name: 'Union' },
-                            { value: 300, name: 'Ads' }
+                            { value: 1048, name: '主车间' },
+                            { value: 735, name: '1号车间' },
+                            { value: 580, name: '2号车间' },
+                            { value: 484, name: '公用车间' },
+                            { value: 300, name: '办公及其他' }
                         ]
                     }
                 ]
@@ -103,7 +103,7 @@ export default {
 }
 
 .flowPre-wrap {
-    height: 3.4rem;
+    height: 3.44rem;
     width: 100%;
     background: #002d6a;
     border-radius: 4px;
@@ -111,7 +111,7 @@ export default {
 }
 
 .flowPre-inner {
-    height: 100%;
+    height: 3.34rem;
     width: 100%;
     margin: 0 auto;
     background-color: #003885;

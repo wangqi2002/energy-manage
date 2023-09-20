@@ -17,7 +17,7 @@ export default {
     name: 'chartOne',
     data() {
         return {
-            titlemsg: 'XXXXXXXXXXX',
+            titlemsg: '人员流量图',
             count: 1,
             data: [14, 23, 10, 26, 9, 34, 25]
         }
@@ -152,7 +152,7 @@ export default {
 }
 
 .flowPre-wrap {
-    height: 3.4rem;
+    height: 3.44rem;
     width: 100%;
     background: #002d6a;
     border-radius: 4px;
