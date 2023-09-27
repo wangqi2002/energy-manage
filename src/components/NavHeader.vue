@@ -2,8 +2,9 @@
   <div>
     <div class="top-warp">
       <div class="grid-content topheader">
-        <img class="logo1" src="../../static/images/logo2.jpg" alt="">
-        <div class="title">安徽迪纳特智能信息管理平台</div>
+        <div class="title">
+          <img class="logo1" src="../../static/images/icon.png" alt="">IShow
+        </div>
         <div class="login-information">
           <img class="avatar" src="../../static/images/avatar.png" v-popover:popover />
         </div>
@@ -112,8 +113,8 @@ export default {
 </script>
 <style scoped>
 .topheader {
-  height: 1rem;
-  line-height: 1rem;
+  height: 0.85rem;
+  line-height: 0.85rem;
   width: 100%;
   background-image: linear-gradient(top, #3b72ee, #012352);
   background-image: -o-linear-gradient(top, #3b72ee, #012352);
@@ -122,18 +123,18 @@ export default {
 }
 
 .logo1 {
-  width: 1.4rem;
-  float: left;
-  margin-top: .32rem;
-  padding-left: .5rem;
+  width: 0.6rem;
+  height: 0.6rem;
+  vertical-align: middle;
+  margin-right: 10px;
+  margin-bottom: 3px;
 }
 
 .title {
   font-size: .30rem;
   color: #fff;
   float: left;
-  margin-left: .2rem;
-  margin-top: 0.1rem
+  margin-left: .5rem;
 }
 
 .login-information {

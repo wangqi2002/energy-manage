@@ -6,8 +6,8 @@
       ref="loginForm"
       :rules="rules"
     >
-      <img class="logo1" src="../../../static/images/logo2.jpg" alt />
-      <div class="title">安徽迪纳特智能信息管理平台</div>
+      <img class="logo1" src="../../../static/images/icon.png" alt />
+      <div class="title">IShow</div>
       <el-form-item class="login-content-item" label="账号" prop="account">
         <el-input
           v-model="loginForm.account"
@@ -56,7 +56,7 @@ export default {
     return {
       loading: false,
       loginForm: {
-        account: "delight",
+        account: "IShow",
         password: "",
       },
       rules: {
