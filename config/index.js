@@ -9,7 +9,7 @@ module.exports = {
 
     // Paths
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',  //TODO 打包加 .
+    assetsPublicPath: './',  //TODO 打包加 .
     // proxyTable: {
     //   "/": {
     //     target: "139.196.233.60:9090",
@@ -22,7 +22,7 @@ module.exports = {
     // },
 
     // Various Dev Server settings
-    // host: '106.13.78.117', // can be overwritten by process.env.HOST
+    // host: '139.196.233.60', // can be overwritten by process.env.HOST
     host: 'localhost',
     port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,

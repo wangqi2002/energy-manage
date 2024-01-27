@@ -4,7 +4,7 @@
         <div class="videoS-wrap">
             <div class="videoS-inner clearfix">
                 <div class="lf video pr">
-                    <video autoplay="autoplay" name="media"
+                    <video autoplay="autoplay" muted="muted" loop name="media"
                         style="width:100%; height:2.88rem; object-fit: fill;border:1px solid #3b72ee;">
                         <source src="../../../static/video/video_two.mp4" type="video/mp4">
                     </video>
