@@ -9,7 +9,7 @@ module.exports = {
 
     // Paths
     assetsSubDirectory: 'static',
-    assetsPublicPath: './',  //TODO 打包加 .
+    assetsPublicPath: '/',  //TODO 打包加 .
     // proxyTable: {
     //   "/": {
     //     target: "139.196.233.60:9090",
